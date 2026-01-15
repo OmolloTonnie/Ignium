@@ -275,3 +275,34 @@ body {
 footer {
   margin-top: auto;
 }
+footer {
+  background-color: #0b0f14;
+  color: #aaa;
+  text-align: center;         /* Center text and icons horizontally */
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;     /* Stack copyright and icons vertically */
+  align-items: center;        /* Center horizontally */
+  gap: 10px;                  /* Space between copyright and icons */
+}
+
+footer p {
+  margin: 0;                  /* Remove default spacing */
+  font-size: 14px;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;                  /* Space between icons */
+}
+
+.social-links a {
+  font-size: 22px;
+  color: #aaa;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #00ffd5;
+  transform: translateY(-3px);
+}

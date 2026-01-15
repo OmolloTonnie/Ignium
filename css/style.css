@@ -242,4 +242,36 @@
  footer .social-links a:hover {
  color: var(--orange);
 }
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 40px;
+  background: #0b0f14;
+  color: #aaa;
+}
 
+.social-links a {
+  font-size: 22px;
+  margin-left: 15px;
+  color: #aaa;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #00ffd5;
+  transform: translateY(-3px);
+}
+  footer p {
+    margin: 0;
+  }
+/* Make footer stick to bottom on short pages */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}

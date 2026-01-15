@@ -108,4 +108,14 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(`Social link clicked: ${link.href}`);
     });
   });
+
+  // ===== COLLAPSIBLE NAV MENU =====
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navMenu = document.querySelector(".nav-menu");
+
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
+  }
 });

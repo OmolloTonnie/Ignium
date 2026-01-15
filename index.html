@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ignium — Awakening Practical Learning</title>
+  <!-- Link to your CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
+<script src="js/main.js"></script>
 <body class="homepage">
   <header>
     <img src="assets/logo.png" alt="Ignium Logo" class="logo">
@@ -23,9 +25,9 @@
       <h1>Ignium is a movement against passive learning.</h1>
       <p>We pull people out of slow, theory-heavy systems and point them toward action and collaborative growth.</p>
       <div class="cta-group">
-   	 <a href="academy.html" class="cta">Discover Sentinel</a>
-   	 <a href="contact.html" class="cta secondary">Join the Community</a>
-     s </div>
+        <a href="academy.html" class="cta">Discover Sentinel</a>
+        <a href="contact.html" class="cta secondary">Join the Community</a>
+      </div>
     </section>
 
     <section class="pillars">
@@ -40,13 +42,13 @@
 
   <footer>
     <p>&copy; 2026 Ignium. All Rights Reserved.</p>
-     <div class="social-links">
-    <a href="https://wa.me/0797034727" target="_blank">WhatsApp</a>  </div>
+    <div class="social-links">
+      <a href="https://wa.me/0797034727" target="_blank">WhatsApp</a>
+    </div>
   </footer>
 
   <script src="js/main.js"></script>
   <script>
-    // Ensure JS only runs on homepage
     if(document.body.classList.contains('homepage')) {
       // Fade-in for pillars section
       const pillars = document.querySelector('.pillars');
@@ -59,7 +61,7 @@
       window.addEventListener('scroll', checkVisibility);
       window.addEventListener('load', checkVisibility);
 
-      // Smooth scroll for CTA (optional)
+      // Smooth scroll for first CTA button
       const cta = document.querySelector('.cta');
       cta.addEventListener('click', e => {
         e.preventDefault();

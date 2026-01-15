@@ -124,7 +124,7 @@ const mobileMenu = document.getElementById('mobile-menu');
 const navList = document.querySelector('.nav-list');
 
 mobileMenu.addEventListener('click', () => {
-  navList.classList.toggle('active');
-  mobileMenu.classList.toggle('open');
+  navList.classList.toggle('active');  // slide menu in/out
+  mobileMenu.classList.toggle('open'); // optional for animation
 });
 </script>

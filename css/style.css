@@ -1,111 +1,118 @@
-// main.js
+:root {
+  --blue: #00b3ff;
+  --deep-blue: #0b1c2d;
+  --orange: #ff7a18;
+  --yellow: #ffb347;
+  --dark: #050912;
+  --white: #ffffff;
+}
 
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("Ignium systems online...");
+/* Reset & basic body styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  // ===== HOMEPAGE =====
-  if (document.body.classList.contains('homepage')) {
-    // Fade-in pillars
-    const pillars = document.querySelector('.pillars');
-    if (pillars) {
-      const triggerPoint = window.innerHeight / 1.1;
-      const checkPillars = () => {
-        if (pillars.getBoundingClientRect().top < triggerPoint) {
-          pillars.classList.add('visible');
-        }
-      };
-      window.addEventListener('scroll', checkPillars);
-      window.addEventListener('load', checkPillars);
-    }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark);
+  background-color: var(--white);
+}
 
-    // CTA buttons smooth scroll
-    const ctas = document.querySelectorAll('.cta');
-    ctas.forEach(cta => {
-      cta.addEventListener('click', e => {
-        const href = cta.getAttribute('href');
-        if (href && href.startsWith('#')) {
-          e.preventDefault();
-          const target = document.querySelector(href);
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-          }
-        }
-      });
-    });
+/* ===================== */
+/* Header & Navigation   */
+/* ===================== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--blue);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-    // CTA hover animation
-    ctas.forEach(cta => {
-      cta.addEventListener('mouseenter', () => {
-        cta.style.transform = 'translateY(-3px)';
-        cta.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
-      });
-      cta.addEventListener('mouseleave', () => {
-        cta.style.transform = '';
-        cta.style.boxShadow = '';
-      });
-    });
+header .logo {
+  height: 50px;
+}
+
+/* Default nav links (desktop) */
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--blue);
+}
+
+/* ===== Collapsible Mobile Menu ===== */
+.menu-toggle {
+  display: none; /* hidden on desktop */
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--dark);
+  cursor: pointer;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: row; /* keep logo + toggle aligned */
+    position: relative;
   }
 
-  // ===== ACADEMY PAGE =====
-  if (document.body.classList.contains('academy-page')) {
-    const sentinelBtn = document.querySelector('.sentinel-cta');
-    if (sentinelBtn) {
-      sentinelBtn.addEventListener('mouseenter', () => {
-        sentinelBtn.style.transform = 'translateY(-2px)';
-        sentinelBtn.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
-      });
-      sentinelBtn.addEventListener('mouseleave', () => {
-        sentinelBtn.style.transform = '';
-        sentinelBtn.style.boxShadow = '';
-      });
-    }
+  .menu-toggle {
+    display: block;
   }
 
-  // ===== CONTACT PAGE =====
-  if (document.body.classList.contains('contact-page')) {
-    const formInputs = document.querySelectorAll('form input, form textarea');
-    formInputs.forEach(input => {
-      input.addEventListener('focus', () => {
-        input.style.borderColor = '#ff7a18'; // var(--orange)
-        input.style.boxShadow = '0 0 5px rgba(255,122,24,0.5)';
-      });
-      input.addEventListener('blur', () => {
-        input.style.borderColor = '#00b3ff'; // var(--blue)
-        input.style.boxShadow = '';
-      });
-    });
+  .nav-menu {
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--white);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    border-top: 1px solid var(--blue);
+    overflow: hidden;
+    max-height: 0;       /* collapsed by default */
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   }
 
-  // ===== GLOBAL NAV LINK HOVER =====
-  const navLinks = document.querySelectorAll('nav a');
-  navLinks.forEach(link => {
-    link.addEventListener('mouseenter', () => {
-      link.style.color = '#00b3ff'; // var(--blue)
-    });
-    link.addEventListener('mouseleave', () => {
-      link.style.color = ''; // revert
-    });
-  });
+  .nav-menu a {
+    padding: 0.8rem 2rem;
+    color: var(--dark);
+  }
 
-  // ===== SOCIAL/COMMUNITY LINKS =====
-  const socialLinks = document.querySelectorAll('.social-links a');
-  socialLinks.forEach(link => {
-    // Open external links in new tab
-    link.setAttribute('target', '_blank');
+  .nav-menu.show {
+    max-height: 500px;   /* expand to show links */
+    opacity: 1;
+  }
+}
 
-    // Hover effect
-    link.addEventListener('mouseenter', () => {
-      link.style.color = '#ff7a18'; // var(--orange)
-      link.style.transform = 'translateY(-2px)';
-    });
-    link.addEventListener('mouseleave', () => {
-      link.style.color = '';
-      link.style.transform = '';
-    });
+/* ===================== */
+/* Hero Section          */
+/* ===================== */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--deep-blue);
+  color: var(--white);
+}
 
-    // Optional: log click to console for now
-    link.addEventListener('click', () => {
-      console.log(Social link clicked: ${link.href});
-    });
-  });
-});
+.hero h1 {
+  font-size: 2.5rem;

@@ -310,6 +310,7 @@ header {
   width: 100%;
   padding: 0 40px;
   display: flex;
+  flex-direction: row;
   justify-content: space-between; /* logo left, menu right */
   align-items: center;
   background-color: #0b0f14;

@@ -76,17 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ===== GLOBAL NAV LINK HOVER =====
-  const navLinks = document.querySelectorAll('nav a');
-  navLinks.forEach(link => {
-    link.addEventListener('mouseenter', () => {
-      link.style.color = '#00b3ff'; // var(--blue)
-    });
-    link.addEventListener('mouseleave', () => {
-      link.style.color = ''; // revert
-    });
-  });
-
+  
   // ===== SOCIAL/COMMUNITY LINKS =====
   const socialLinks = document.querySelectorAll('.social-links a');
   socialLinks.forEach(link => {

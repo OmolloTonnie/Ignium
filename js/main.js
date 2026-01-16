@@ -100,14 +100,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ===== COLLAPSIBLE NAV MENU =====
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navMenu = document.querySelector(".nav-menu");
+ <script>
+const toggle = document.getElementById("menuToggle");
+const nav = document.querySelector(".site-nav");
 
-  if (menuToggle && navMenu) {
-    menuToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("show");
-    });
-  }
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+</script>
+
 });
 <script>
 const mobileMenu = document.getElementById('mobile-menu');

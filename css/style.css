@@ -1,20 +1,54 @@
+/* ======================================== */
+/* IGNIUM GLOBAL STYLES                     */
+/* ======================================== */
+
+/* Root Colors */
+:root {
+  --blue: #00b3ff;
+  --deep-blue: #0b1c2d;
+  --orange: #ff7a18;
+  --yellow: #ffb347;
+  --dark: #050912;
+  --white: #ffffff;
+  --text: #ccc;
+  --bg: #0b0f14;
+}
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ======================================== */
+/* HEADER                                   */
+/* ======================================== */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-
   height: 70px;
   padding: 0 40px;
-
   display: flex;
-  justify-content: space-between;   /* THIS is the key */
+  justify-content: space-between; /* logo left, nav right */
   align-items: center;
-
-  background-color: #0b0f14;        /* footer color */
+  background-color: var(--bg);
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
-/* Logo → LEFT */
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
@@ -24,7 +58,7 @@
   height: 48px;
 }
 
-/* Navigation → RIGHT */
+/* Navigation */
 .site-nav {
   display: flex;
 }
@@ -34,18 +68,230 @@
   display: flex;
   align-items: center;
   gap: 28px;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-list a {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
   color: #aaa;
   text-decoration: none;
-  font-weight: 500;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .nav-list a:hover {
   color: #00ffd5;
   transform: translateY(-2px);
+}
+
+/* ======================================== */
+/* TYPOGRAPHY                               */
+/* ======================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4, h5, h6 { font-size: 1.2rem; }
+
+p, li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+ul, ol {
+  margin-left: 1.5rem;
+}
+
+/* Links */
+a {
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--blue);
+  transition: color 0.3s, transform 0.2s;
+}
+
+a:hover {
+  color: var(--orange);
+  transform: translateY(-2px);
+}
+
+/* ======================================== */
+/* HERO & MAIN SECTIONS                     */
+/* ======================================== */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--deep-blue);
+  color: var(--white);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+  color: var(--white);
+}
+
+section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--deep-blue);
+}
+
+section p, section li {
+  font-size: 1rem;
+  color: var(--text);
+}
+
+section ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+/* ======================================== */
+/* CTA BUTTONS                               */
+/* ======================================== */
+.cta, button {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  background-color: var(--orange);
+  color: var(--white);
+  border: none;
+}
+
+.cta:hover, button:hover {
+  background-color: var(--yellow);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Secondary CTA */
+.cta.secondary {
+  background-color: var(--blue);
+}
+
+.cta.secondary:hover {
+  background-color: var(--deep-blue);
+}
+
+/* ======================================== */
+/* FORMS                                     */
+/* ======================================== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: auto;
+}
+
+form input, form textarea {
+  padding: 0.8rem;
+  border: 1px solid var(--blue);
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form input:focus, form textarea:focus {
+  outline: none;
+  border-color: var(--orange);
+  box-shadow: 0 0 5px rgba(255,122,24,0.5);
+}
+
+/* ======================================== */
+/* FOOTER                                   */
+/* ======================================== */
+footer {
+  background-color: var(--bg);
+  color: #aaa;
+  text-align: center;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  margin-top: auto; /* stick to bottom on short pages */
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+footer .social-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+footer .social-links a {
+  font-size: 22px;
+  color: #aaa;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #1b1f26;
+}
+
+footer .social-links a:hover {
+  color: #00ffd5;
+  transform: translateY(-3px);
+  background-color: var(--orange);
+}
+
+/* ======================================== */
+/* RESPONSIVE STYLING                        */
+/* ======================================== */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 20px;
+    height: auto;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
 }

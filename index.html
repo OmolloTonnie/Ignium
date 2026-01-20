@@ -4,30 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ignium — Awakening Practical Learning</title>
-  <!-- Link to your CSS -->
+
+  <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body class="homepage">
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href="index.html" class="logo">
+      <img src="assets/logo.png" alt="Ignium Logo">
+    </a>
+
+    <nav class="site-nav">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">What We Build</a></li>
+        <li><a href="academy.html">Sentinel</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
   <main>
- <header>
-  <a href="index.html" class="logo">
-    <img src="assets/logo.png" alt="Ignium Logo">
-  </a>
-  
-  <nav>
-    <ul class="nav-list">
-      <li><a href="index.html"></a></li>
-      <li><a href="about.html"></a></li>
-      <li><a href="services.html"></a></li>
-      <li><a href="academy.html"></a></li>
-      <li><a href="contact.html"></a></li>
-    </ul>
-  </nav>
- </header>
-
-
     <section class="pillars">
       <h2>Our Role</h2>
       <ul>
@@ -38,21 +42,22 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2026 Ignium. All Rights Reserved.</p>
+
     <div class="social-links">
-          <!-- WhatsApp -->
       <a href="https://wa.me/254797034727" target="_blank" title="Chat with us on WhatsApp">
-       <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-whatsapp"></i>
       </a>
 
-    <!-- Call -->
       <a href="tel:254797034727" title="Call us">
-       <i class="fas fa-phone"></i>
+        <i class="fas fa-phone"></i>
       </a>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="js/main.js"></script>
   <script>
     if(document.body.classList.contains('homepage')) {
@@ -67,13 +72,16 @@
       window.addEventListener('scroll', checkVisibility);
       window.addEventListener('load', checkVisibility);
 
-      // Smooth scroll for first CTA button
+      // Smooth scroll for first CTA button (if present)
       const cta = document.querySelector('.cta');
-      cta.addEventListener('click', e => {
-        e.preventDefault();
-        document.querySelector('.pillars').scrollIntoView({ behavior: 'smooth' });
-      });
+      if(cta) {
+        cta.addEventListener('click', e => {
+          e.preventDefault();
+          document.querySelector('.pillars').scrollIntoView({ behavior: 'smooth' });
+        });
+      }
     }
   </script>
+
 </body>
 </html>

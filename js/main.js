@@ -1,7 +1,5 @@
 // main.js
-
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("Ignium systems online...");
+document
 
   // ===== HOMEPAGE =====
   if (document.body.classList.contains('homepage')) {
@@ -98,24 +96,3 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(`Social link clicked: ${link.href}`);
     });
   });
-
-  // ===== COLLAPSIBLE NAV MENU =====
- <script>
-const toggle = document.getElementById("menuToggle");
-const nav = document.querySelector(".site-nav");
-
-toggle.addEventListener("click", () => {
-  nav.classList.toggle("active");
-});
-</script>
-
-});
-<script>
-const mobileMenu = document.getElementById('mobile-menu');
-const navList = document.querySelector('.nav-list');
-
-mobileMenu.addEventListener('click', () => {
-  navList.classList.toggle('active');  // slide menu in/out
-  mobileMenu.classList.toggle('open'); // optional for animation
-});
-</script>
